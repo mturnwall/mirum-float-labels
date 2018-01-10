@@ -1,0 +1,67 @@
+/**
+    Default colors, override these in your sass file
+*/
+$fl-color-border: #bababa !default;
+$fl-color-error: #f31151 !default;
+$fl-color-label: #868686 !default;
+$fl-color-focus: #0096bd !default;
+
+/*
+    Begin float label styles
+*/
+.float-label {
+    $block: &;
+
+    position: relative;
+
+    &--has-focus, &--has-value, &--has-error {
+
+        #{$block}__label {
+            left: 14px;
+            font-size: 12px;
+            transform: translate3d(0, -12px, 0);
+        }
+    }
+    &--has-error {
+        #{$block}__input, #{$block}__textarea, #{$block}__select {
+            border-color: $ra-color-red-ribbon;
+        }
+        #{$block}__label {
+            color: $ra-color-red-ribbon;
+        }
+    }
+    &--has-focus {
+
+        #{$block}__input, #{$block}__textarea, #{$block}__select {
+            border-color: $ra-color-bondi-blue;
+        }
+        #{$block}__label {
+            color: $ra-color-bondi-blue;
+        }
+    }
+    &__input, &__textarea, &__select {
+        border: 2px solid $ra-color-silver;
+        border-radius: 4px;
+        padding: 20px 12px 12px;
+        line-height: 1;
+        font: 18px Lato;
+        outline: none;
+
+        &::placeholder {
+            opacity: 0;
+        }
+    }
+    &__input, &__select {
+        height: 56px;
+    }
+    &__label {
+        position: absolute;
+        top: 18px;
+        left: 14px;
+        font-size: 18px;
+        color: $ra-color-gray;
+        transition: transform 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000),
+        font-size 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000),
+        color 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+    }
+}
