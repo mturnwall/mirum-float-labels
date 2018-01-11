@@ -5,6 +5,12 @@ $fl-color-border: #bababa !default;
 $fl-color-error: #f31151 !default;
 $fl-color-label: #868686 !default;
 $fl-color-focus: #0096bd !default;
+$fl-color-background: #fff !default;
+
+/**
+    Typography
+*/
+$fl-font-size: 18px !default;
 
 /*
     Begin float label styles
@@ -24,27 +30,28 @@ $fl-color-focus: #0096bd !default;
     }
     &--has-error {
         #{$block}__input, #{$block}__textarea, #{$block}__select {
-            border-color: $ra-color-red-ribbon;
+            border-color: $fl-color-error;
         }
         #{$block}__label {
-            color: $ra-color-red-ribbon;
+            color: $fl-color-error;
         }
     }
     &--has-focus {
 
         #{$block}__input, #{$block}__textarea, #{$block}__select {
-            border-color: $ra-color-bondi-blue;
+            border-color: $fl-color-focus;
         }
         #{$block}__label {
-            color: $ra-color-bondi-blue;
+            color: $fl-color-focus;
         }
     }
     &__input, &__textarea, &__select {
-        border: 2px solid $ra-color-silver;
+        background-color: $fl-color-background;
+        border: 2px solid $fl-color-border;
         border-radius: 4px;
         padding: 20px 12px 12px;
         line-height: 1;
-        font: 18px Lato;
+        font-size: $fl-font-size;
         outline: none;
 
         &::placeholder {
@@ -59,9 +66,9 @@ $fl-color-focus: #0096bd !default;
         top: 18px;
         left: 14px;
         font-size: 18px;
-        color: $ra-color-gray;
+        color: $fl-color-label;
         transition: transform 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000),
-        font-size 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000),
-        color 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+                    font-size 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000),
+                    color 300ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
     }
 }
