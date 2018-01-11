@@ -16,6 +16,7 @@
     "arrow-parens": [
       2,
       "as-needed"
-    ]
+    ],
+    "object-curly-newline": "off"
   }
 }
