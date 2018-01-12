@@ -2,7 +2,7 @@
 
 This module provides a way to do those fancy form control labels that move out of the way when the form control gets focus.
 
-![float-label example image](float_label_example.jpg)
+<!-- ![float-label example image](float_label_example.jpg) -->
 
 The module just requires importing the sass and javascript files. The sass file contains some default colors which can be overwritten.
 
@@ -15,6 +15,22 @@ npm install --save-dev mirum-float-label
 ```
 
 ## Usage
+
+### HTML
+
+The module expects certain HTML. You will need to wrap your form control and label inside a div container. The order of the form control and label doesn't matter since the label is positioned absolutely.
+
+```html
+<div class="float-label">
+    <input class="float-label__input" type="text" id="fName" placeholder="First Name">
+    <label class="float-label__label" for="fName">First Name</label>
+</div>
+
+<div class="float-label">
+    <input class="float-label__input" type="text" id="lName">
+    <label class="float-label__label" for="lName">Last Name</label>
+</div>
+```
 
 ### Sass
 
@@ -33,6 +49,14 @@ There a few sass variables that you can update to override with your own styling
 * $fl-color-background: #fff !default;
 * $fl-font-size: 18px !default;
 
+Once you have the variables as you want them simply call the mixin inside the selector that you want to use.
+
+```scss
+.float-label {
+    @include mirum-float-labels();
+}
+```
+
 ### Javascript
 
 This is an ES2015 (ES6) module. So just import it as you need and call the function.
@@ -43,22 +67,6 @@ import floatLabel from 'float-label';
 window.addEventListener('DOMContentLoaded', function () {
     floatLabel();
 });
-```
-
-### HTML
-
-The module expects certain HTML. You will need to wrap your form control and label inside a div container. The order of the form control and label doesn't matter since the label is positioned absolutely.
-
-```html
-<div class="float-label">
-    <input class="float-label__input" type="text" id="fName" placeholder="First Name">
-    <label class="float-label__label" for="fName">First Name</label>
-</div>
-
-<div class="float-label">
-    <input class="float-label__input" type="text" id="lName">
-    <label class="float-label__label" for="lName">Last Name</label>
-</div>
 ```
 
 ## License
