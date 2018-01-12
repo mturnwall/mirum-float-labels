@@ -13,7 +13,7 @@ const sassFilename = process.env.npm_package_config_cssMain;
 
 function compileSass() {
     return sass.renderSync({
-        file: `./src/sass/${sassFilename}.scss`,
+        file: `./src/${sassFilename}.scss`,
         outFile: `${cssDir}/master.css`,
         outputStyle: 'expanded',
         sourceMap: true,
@@ -25,8 +25,8 @@ function compileSass() {
 function processCss(css) {
     const processor = postcss([autoprefixer]);
     processor.process(css.css, {
-            from: `./src/sass/${sassFilename}.scss`,
-            to: `${cssDir}/master.css`,
+            from: `./src/${sassFilename}.scss`,
+            to: `${cssDir}/${sassFilename}.css`,
             map: {
                 prev: css.map.toString(),
                 inline: false,
@@ -38,19 +38,12 @@ function processCss(css) {
                     console.log('writeFile error:', err);
                 }
             });
-            if (postResult.map) {
-                fs.writeFileSync(`${cssDir}/${sassFilename}.css.map`, postResult.map, (err) => {
-                    if (err) {
-                        console.log('writeFile error:', err);
-                    }
-                });
-            }
         });
 }
 
 function watchCss() {
     log('notice', 'Start watching sass files...');
-    const watcher = chokidar.watch('src/sass');
+    const watcher = chokidar.watch('src');
     watcher.on('change', async (filepath) => {
         log('success', `${filepath} was updated.`);
         await run(buildCss);

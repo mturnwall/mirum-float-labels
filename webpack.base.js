@@ -3,11 +3,12 @@ const webpack = require('webpack');
 const jsDir = process.env.npm_package_config_jsOut;
 const AssetsPlugin = require('assets-webpack-plugin');
 const pkg = require('./package.json');
+
 module.exports = function () {
     return {
-        context: path.resolve(__dirname, './src/scripts'),
+        context: path.resolve(__dirname, './src'),
         entry: [
-            './main.js',
+            `./${pkg.main}`,
         ],
         output: {
             hashDigestLength: 8,
@@ -34,12 +35,12 @@ module.exports = function () {
             ],
         },
         plugins: [
-            new AssetsPlugin({
-                prettyPrint: true,
-                filename: 'assets.json',
-                fullPath: false,
-                path: path.join(__dirname, 'src', 'templates', 'data'),
-            }),
+            // new AssetsPlugin({
+            //     prettyPrint: true,
+            //     filename: 'assets.json',
+            //     fullPath: false,
+            //     path: path.join(__dirname, 'src', 'templates', 'data'),
+            // }),
         ]
     }
 };
