@@ -7,7 +7,7 @@ const commonConfig = require('./webpack.base');
 module.exports = function () {
     return webpackMerge(commonConfig(), {
         output: {
-            filename: '[name].[chunkhash].js',
+            filename: '[name].min.js',
         },
         plugins: [
             new webpack.LoaderOptionsPlugin({
@@ -29,7 +29,6 @@ module.exports = function () {
                     },
                 },
             }),
-        ],
-        devtool: 'source-map',
+        ]
     });
 };

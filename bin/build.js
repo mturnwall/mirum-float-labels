@@ -1,21 +1,20 @@
+const fse = require('fs-extra');
 const run = require('./run');
 const clean = require('./clean');
-const buildCss = require('./build-css');
 const buildJs = require('./build-js');
-// const buildHtml = require('./build-html');
-// const copy = require('./copy');
 const log = require('./log');
 
-async function build(options = []) {
-    const isProd = options.includes('--prod');
+async function build() {
     try {
         await run(clean);
-        if (isProd) {
-            await run(buildJs);
-        }
-        await run(buildCss);
-        // await run(buildHtml, options);
-        // await run(copy);
+        await run(buildJs);
+        fse.copy('./src/float-label.scss', './dist/scss/float-label.scss', err => {
+            if (err) {
+
+            } else {
+                log('success', 'scss file copied');
+            }
+        });
     } catch(err) {
         log('error', `build error: ${err}`);
     }

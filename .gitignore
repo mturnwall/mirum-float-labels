@@ -30,7 +30,7 @@ node_modules/
 bower_components
 .tmp
 dev
-dist
+# dist
 
 # Compiled source #
 ###################

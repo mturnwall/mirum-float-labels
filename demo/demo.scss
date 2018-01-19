@@ -1,0 +1,5 @@
+@import '../src/float-label';
+
+.float-label {
+    @include mirum-float-labels();
+}
