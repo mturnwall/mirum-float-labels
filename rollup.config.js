@@ -5,7 +5,7 @@ export default {
     output: {
         file: './dist/float-label.browser.js',
         format: 'umd',
-        name: 'mirum',
+        name: 'floatLabel',
     },
     plugins: [
         babel()

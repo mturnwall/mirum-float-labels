@@ -4,17 +4,15 @@ const sass = require('node-sass');
 const importer = require('node-sass-magic-importer');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
-const run = require('./run');
-const chokidar = require('chokidar');
 const log = require('./log');
 
-const cssDir = process.env.npm_package_config_cssOut;
-const sassFilename = process.env.npm_package_config_cssMain;
+const dir = 'demo';
+const sassFilename = 'demo';
 
 function compileSass() {
     return sass.renderSync({
-        file: `./src/${sassFilename}.scss`,
-        outFile: `${cssDir}/master.css`,
+        file: `./${dir}/${sassFilename}.scss`,
+        outFile: `${dir}/${sassFilename}.css`,
         outputStyle: 'expanded',
         sourceMap: true,
         sourceMapContents: true,
@@ -25,15 +23,15 @@ function compileSass() {
 function processCss(css) {
     const processor = postcss([autoprefixer]);
     processor.process(css.css, {
-            from: `./src/${sassFilename}.scss`,
-            to: `${cssDir}/${sassFilename}.css`,
+            from: `./${dir}/${sassFilename}.scss`,
+            to: `./${dir}/${sassFilename}.css`,
             map: {
                 prev: css.map.toString(),
                 inline: false,
             },
         })
         .then((postResult) => {
-            fs.writeFileSync(`${cssDir}/${sassFilename}.css`, postResult.css, (err) => {
+            fs.writeFileSync(`./${dir}/${sassFilename}.css`, postResult.css, (err) => {
                 if (err) {
                     console.log('writeFile error:', err);
                 }
@@ -41,30 +39,10 @@ function processCss(css) {
         });
 }
 
-function watchCss() {
-    log('notice', 'Start watching sass files...');
-    const watcher = chokidar.watch('src');
-    watcher.on('change', async (filepath) => {
-        log('success', `${filepath} was updated.`);
-        await run(buildCss);
-    })
-}
-
-function buildCss(options) {
-    const watch = options.includes('--watch');
-    if (!fs.existsSync(cssDir)) {
-        mkdirp.sync(cssDir, (err) => {
-            if (err) {
-                console.log(err);
-            }
-        });
-    }
+function buildCss() {
     return new Promise((resolve, reject) => {
         const result = compileSass();
         processCss(result);
-        if (watch) {
-            watchCss();
-        }
         resolve();
     });
 }

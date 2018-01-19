@@ -6,7 +6,8 @@
   "config": {
     "jsOut": "dist/js",
     "cssMain": "float-label",
-    "cssOut": "dist/css"
+    "cssOut": "demo",
+    "copyFiles": ["./src/float-label.scss"]
   },
   "devDependencies": {
     "assets-webpack-plugin": "~3.5.1",
@@ -56,12 +57,11 @@
     "webpack-merge": "~4.1.0"
   },
   "scripts": {
-    "autoprefixer": "postcss -u autoprefixer -r $npm_package_config_cssOut/**/*.css",
-    "build": "npm run clean && npm run build:js",
+    "build": "node bin/run build",
     "build:css": "node bin/run build-css",
-    "build:html": "node bin/run build-html --writeHtml",
-    "build:js": "npm run lint && rollup -c",
+    "build:js": "node bin/run build-js",
     "clean": "node bin/run clean",
+    "copy": "node bin/run copy",
     "lint": "eslint -f 'table' src/*.js",
     "test": "ava --tap | faucet"
   },

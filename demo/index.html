@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Float Label Example</title>
-    <link rel="stylesheet" href="css/demo.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
+    <link href="demo.css" rel="stylesheet">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+        .wrapper {
+            width: 600px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            font: 14px/1.2 Lato;
+        }
+        h1 {
+            grid-column: 1 / 3;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        input, textarea, select {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -45,7 +68,7 @@
     <script src="../dist/float-label.browser.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-            mirum.floatLabel();
+            floatLabel();
         });
     </script>
 </body>
