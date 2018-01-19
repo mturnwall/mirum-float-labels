@@ -57,9 +57,9 @@
     "webpack-merge": "~4.1.0"
   },
   "scripts": {
-    "build": "node bin/run build",
+    "build": "npm run lint && node bin/run build",
     "build:css": "node bin/run build-css",
-    "build:js": "node bin/run build-js",
+    "build:js": "npm run lint && node bin/run build-js",
     "clean": "node bin/run clean",
     "copy": "node bin/run copy",
     "lint": "eslint -f 'table' src/*.js",
