@@ -39,7 +39,7 @@
     "rsvp": "~3.5.0",
     "sassdoc": "~2.2.2",
     "sinon": "^4.1.4",
-    "uglifyjs-webpack-plugin": "^1.1.6",
+    "uglifyjs-webpack-plugin": "^1.1.6"
   },
   "scripts": {
     "build": "npm run lint && node bin/run build",
