@@ -1,6 +1,6 @@
 {
   "name": "mirum-float-labels",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Have a form control label float inside the label. It moves out of the way when the control gets focus.",
   "main": "float-label.js",
   "config": {
