@@ -69,6 +69,16 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 ```
 
+#### Browser version
+
+If you are doing a build without using javascript modules there is a browser friendly version of this module that you can use. You can include it into your page with a regular `<script>` tag.
+
+```javascript
+<script src="float-label.browser.js"></script>
+```
+
+There is also a minified version, `float-label.browser.min.js`,
+
 ## License
 
 MIT License

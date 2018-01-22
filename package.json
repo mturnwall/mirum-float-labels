@@ -1,13 +1,15 @@
 {
   "name": "mirum-float-labels",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Have a form control label float inside the label. It moves out of the way when the control gets focus.",
   "main": "float-label.js",
   "config": {
     "jsOut": "dist/js",
     "cssMain": "float-label",
     "cssOut": "demo",
-    "copyFiles": ["./src/float-label.scss"]
+    "copyFiles": [
+      "./src/float-label.scss"
+    ]
   },
   "devDependencies": {
     "autoprefixer": "~7.1.1",
@@ -18,6 +20,7 @@
     "babel-preset-env": "~1.5.1",
     "browser-env": "^3.2.4",
     "chalk": "^1.1.3",
+    "deepmerge": "^2.0.1",
     "eslint": "3.18.0",
     "eslint-config-mirum": "~1.3.0",
     "eslint-loader": "^1.8.0",
@@ -34,6 +37,7 @@
     "rimraf": "~2.6.1",
     "rollup": "^0.54.1",
     "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0",
     "rsvp": "~3.5.0",
     "sassdoc": "~2.2.2",
     "sinon": "^4.1.4",
