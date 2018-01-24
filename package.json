@@ -54,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@bitbucket.mirum.agency:7999/~mturnwall/mirum-float-labels.git"
+    "url": "git@github.com:mturnwall/mirum-float-labels.git"
   },
   "keywords": [
     "mirum",
