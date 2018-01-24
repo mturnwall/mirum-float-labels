@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-    - "8.9.4"
+    - 8.9.4
 cache:
-    directories:
-        - node_modules
+  directories:
+  - node_modules
 install:
     - npm install
 script:
     - npm run build
 deploy:
-    provider: script
-    skip_cleanup: true
-    email: "michael.turnwall@mirumagency.com"
-    secure: "rpLMx9UfHAVyKJPJj48UBGptu8RQOMF6YKYy06Py0nisT3Vn6F4j7g3xv0iX6Lu2e4JjGbREIAGLWem8PNZj9kJcxmmT1155NdnCWNkBPo2ZBPbF4YXAkuyQ7LafOLGNzM94XP8+dmyhHLBN8xewQGGpz9seH1+K/o33S/fK21Dr/4LpvCArWVD/EnyW99x2WZwmnY3KrRY55G/fuoxbq+/8EnbQHWYMhriQbOBL27e4cFNGA7l1JI8aa7tbg/c77XfxDaUM20J6v9BXEf5FHGcZ9SQHumheZWoyO3dMtidAmGIHgc1u8mVR65KFP7i/SOpQHunn6ETsoOPHXs7zGq8RumjsW9SvfJdER4Y//gG5mNm0aIUF/6a1FLV4CB2WBWX1jD/ZJdbDSpeBjcCFgede69SbOkCKQW7yhd8ehy9lYZGlF2fmpJflT3zvuP1fK7tAoK88QZ7vIh714DVY0RFZCGa23m7jVnocyf/eXhzr2+1OxW+JOsDH+792h0RRWLyGuh0FBcra2eJIOQyy9wyI+m1ms7QxHh4z7SaTcAHd/52PwG0wqAsVOMXhdW0gd1SPoMuwTYC6IQt95/WLA7jzsUp6WEsk29V4P+q1PRTrMZ83eJwiCKIhDgERlzso5ua42pqdXqEbJ4qBrZlEgO1VnYdu+e6V/vx4vI72RMw="
-    script:
-        - npm run semantic-release
+  provider: script
+  skip_cleanup: true
+  email: michael.turnwall@mirumagency.com
+  script: npm run semantic-release
+  api_key:
+    secure: rm451Lgc282WtLFDsMzKeYaFG5vuDUI2p7t8qL2sZC8zh/vjeKJk1LGyzjKPrMnqS1VmGwoqF+MlZnnUixgHWgwkGrFOlQdo8DWyyflpblwUl+wwd6ZffotT25+VZNlYaY5AvZpfIjnPMPBkjO2WY+iC4YumNpC0x9EqAH3FErdU9HSGzmJBhMiwAprC1Pfj+ikId6J5knsKy6wb/WSq++olO0ykKbGcGcDseJcLVjdBy3YFSl1+mKP3A6iSFrns0CjSFo2iLVTamAjofy0W3OceucHRxXUVuoUevod9zcY6ZXvzeU4DeSdsGAXO4FxewJiWBhGnA7hhJ9cOi2Qcxi95NapLyEKVJJjCccIPA431aTXyDWSoQOdS5BDttcnIfDXyrDOsQbt1CnY88fhuMFI700TvjueRSq8whQGzr14wWPs+ecwCHwSKZZt7WDW7PldWU1sK8Yt3J41hoC9XqhqJ3IByKk6a4lV/Mhe2GPbLfjYS5b82KX/a5dUab5ujIfd9hMK/KbjbL9E1yn0I1l7Zbg//RI3f/cHExVbgePATsW6qJUt+cwgd7zqK14ksDTYZCaWPiuTCYM8fCC06wRGG/qLFNiftMDpslrRkGKd/0DC1x6+dgdGpqShhTFN5mcYEsQd7HbfAkkIHCrZecokvqsQBgnnYudsGCwchmcQ=
