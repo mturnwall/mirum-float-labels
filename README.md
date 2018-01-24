@@ -2,7 +2,7 @@
 
 This module provides a way to do those fancy form control labels that move out of the way when the form control gets focus.
 
-<!-- ![float-label example image](float_label_example.jpg) -->
+![float-label example image](float_label_example.jpg)
 
 The module just requires importing the sass and javascript files. The sass file contains some default colors which can be overwritten.
 
