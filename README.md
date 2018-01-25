@@ -49,6 +49,14 @@ There a few sass variables that you can update to override with your own styling
 * $fl-color-background: #fff !default;
 * $fl-font-size: 18px !default;
 
+The classes in the sass default to BEM syntax (see HTML example above). If you would like to use different classes in your HTML here are the sass variables to update.
+
+```scss
+$fl-has-focus: '&--has-focus';
+$fl-has-value: '&--has-value';
+$fl-has-error: '&--has-error';
+```
+
 Once you have the variables as you want them simply call the mixin inside the selector that you want to use.
 
 ```scss

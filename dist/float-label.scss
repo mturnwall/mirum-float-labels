@@ -1,26 +1,33 @@
-/**
-    Default colors, override these in your sass file
-*/
+//
+// Default colors, override these in your sass file
+//
 $fl-color-border: #bababa !default;
 $fl-color-error: #f31151 !default;
 $fl-color-label: #868686 !default;
 $fl-color-focus: #0096bd !default;
 $fl-color-background: #fff !default;
 
-/**
-    Typography
-*/
+//
+// Typography
+//
 $fl-font-size: 18px !default;
 
-/*
-    Begin float label styles
-*/
+//
+// Classes !default
+//
+$fl-has-focus: '&--has-focus' !default;
+$fl-has-value: '&--has-value' !default;
+$fl-has-error: '&--has-error' !default;
+
+//
+// Begin float label styles
+//
 @mixin mirum-float-labels() {
     $block: &;
 
     position: relative;
 
-    &--has-focus, &--has-value, &--has-error {
+    #{$fl-has-focus}, #{$fl-has-value}, #{$fl-has-error} {
 
         #{$block}__label {
             left: 14px;
@@ -28,7 +35,7 @@ $fl-font-size: 18px !default;
             transform: translate3d(0, -12px, 0);
         }
     }
-    &--has-error {
+    #{$fl-has-error} {
         #{$block}__input, #{$block}__textarea, #{$block}__select {
             border-color: $fl-color-error;
         }
@@ -36,7 +43,7 @@ $fl-font-size: 18px !default;
             color: $fl-color-error;
         }
     }
-    &--has-focus {
+    #{$fl-has-focus} {
 
         #{$block}__input, #{$block}__textarea, #{$block}__select {
             border-color: $fl-color-focus;
