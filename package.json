@@ -42,6 +42,7 @@
     "sassdoc": "~2.2.2",
     "semantic-release": "^12.2.4",
     "sinon": "^4.1.4",
+    "standard-version": "^4.3.0",
     "uglifyjs-webpack-plugin": "^1.1.6"
   },
   "scripts": {

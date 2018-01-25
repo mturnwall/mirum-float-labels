@@ -21,3 +21,6 @@ trim_trailing_whitespace = false
 [*.php]
 # This is the Drupal standard
 indent_size = 2
+
+[*.yml]
+indent_size = 2
