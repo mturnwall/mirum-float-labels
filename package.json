@@ -52,6 +52,7 @@
     "clean": "node bin/run clean",
     "copy": "node bin/run copy",
     "lint": "eslint -f 'table' src/*.js",
+    "release": "standard-version",
     "semantic-release": "semantic-release",
     "test": "ava --tap | faucet"
   },
