@@ -10,10 +10,10 @@ script:
   - npm run build
 deploy:
   provider: npm
-    email: michael.turnwall@mirumagency.com
-    api_key: $NPM_TOKEN
-    on:
-      tags: true
+  email: michael.turnwall@mirumagency.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
 env:
   NPM_TOKEN:
     secure: BJAb31tIORFSLw8t+/bDMxypFGFLLtDdXtksHcHysZ6m77PMiy4nacECY50MfFIdFxIwSIkJU0uHKm/JrbqCrOLEBDr2HRE0QCK4KkNK7pGj1a6jM5xk3vTYJR8ZwQjnC8HMv7Y1fkEdDlP1gmsl32lHG4bPaLl0kD+s4aPlgrhU6YCpNaAEKPaa7G97JkRCwB9dfolqDdoCSlvH+BmQMyfbMkYYBpagKwj+uCUmpG/vfRYEpP6e9hi8vo2PEJSQLNCJ236zhdCW2FVDY2aZUqA8t5JLvU2+YHSfglXtY922Q5cOoxdk9biaLky+41S9RhdC6+ekVw0n+J/sBnxXNad7ijTOZqc+QIDwZ4naYt8OkxNGaHd0PuTzctX5HxjTwX15uEfkcM72OrrzkiEYjtxwFIgarxSLVuChdvDCCk18M0Qk/PhB7xHhVROxar4bPuRQNNjnqL5M+btO8uDc5KEdVMWscMmckoOuf79qQwOuwlm2i9wKPhokBXqmXZIyGk6fIOnyuAnFAg7C9s8UDY6/9C/4pixIDf/k2JwBGymb1+poK0BLRx80uMwSOMvDiPvEOqNCmomzmc5jqV7x0s5YejpmI30CmecEn58ncRVwbsCTsLyTsuWA9ztGZktDQwuLxseAicaiC8QPwflZIRUZcLB4tQiTFT+2kOdWMRY=
