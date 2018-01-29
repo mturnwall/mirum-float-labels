@@ -43,7 +43,8 @@
     "semantic-release": "^12.2.4",
     "sinon": "^4.1.4",
     "standard-version": "^4.3.0",
-    "uglifyjs-webpack-plugin": "^1.1.6"
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "snyk": "^1.69.3"
   },
   "scripts": {
     "build": "npm run lint && node bin/run build",
@@ -54,6 +55,7 @@
     "lint": "eslint -f 'table' src/*.js",
     "release": "standard-version",
     "semantic-release": "semantic-release",
+    "snyk": "snyk test",
     "test": "ava --tap | faucet"
   },
   "repository": {

@@ -1,4 +1,6 @@
-# Mirum Float Labels [![Build Status](https://travis-ci.org/mturnwall/mirum-float-labels.svg?branch=master)](https://travis-ci.org/mturnwall/mirum-float-labels)
+# Mirum Float Labels
+
+[![Build Status](https://travis-ci.org/mturnwall/mirum-float-labels.svg?branch=master)](https://travis-ci.org/mturnwall/mirum-float-labels) [![Known Vulnerabilities](https://snyk.io/test/github/mturnwall/mirum-float-labels/badge.svg)](https://snyk.io/test/github/mturnwall/mirum-float-labels)
 
 This module provides a way to do those fancy form control labels that move out of the way when the form control gets focus.
 
